@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*var声明的变量往往会越域  let声明的变量有严格的作用域 */
+        {
+            var a = 1;
+            let b = 2;
+        }
+        console.log(a);//1
+        // console.log(b);//Uncaught ReferenceError: b is not defined
+
+        /* var可以声明多次let只能声明一次 */
+
+        var x = 1;
+        var x = 2;
+        let y = 1;
+        // let y = 2;//Identifier 'y' has already been declared
+        console.log(x);
+        console.log(y);
+
+
+        /*var会存在变量提升  let不存在变量提升*/
+        console.log(m);//undefined
+        var m = 1;
+        // console.log(n);//Cannot access 'n' before initialization
+        let n = 2;
+
+        /*const 声明之后不允许改变，一旦声明必须初始化，否则会报错*/
+        const i = 0;
+        // i = 5;//Assignment to constant variable.
+
+
+
+    </script>
+</body>
+
+</html>

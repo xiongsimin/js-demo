@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*函数参数默认值*/
+        //在ES6以前，无法给一个函数参数设置默认值，只能采用变通写法：
+        function add(a, b) {
+            //判断b是否为空，为空就给默认值1
+            b = b || 1;
+            return a + b;
+        }
+        //传一个参数
+        console.log(add(10));//11
+
+        //现在可以这么写：直接给参数写上默认值，没传就会自动使用默认值
+        function add2(a, b = 1) {
+            return a + b;
+        }
+        console.log(add2(20));//21
+
+        /*不定参数*/
+        function fun(...values) {
+            console.log(values.length);
+        }
+        fun(1, 2, 3);//3
+        fun(1, 2, 3, 4, 5, 6);//6
+
+        /*箭头函数*/
+        //以前声明一个方法
+        var print = function (obj) {
+            console.log(obj);
+        }
+
+        //使用箭头函数
+        var print1 = obj => console.log(obj);
+
+        print("a");//a
+        print1("b");//b
+
+        var sum = function (a, b) {
+            return a + b;
+        }
+        var sum1 = (a, b) => a + b;
+        console.log(sum1(10, 11));//21
+        var sum2 = (a, b) => {
+            let c = a + b;
+            return c + b;
+        }
+        console.log(sum2(10, 20));//50
+
+
+        /*箭头函数+结构表达式*/
+        const person = {
+            name: "jack",
+            age: "21"
+        }
+        var hello = ({ name, age }) => {
+            console.log("hello," + name + ",age：" + age);
+        }
+
+        hello(person);//hello,jack,age：21
+        
+        
+
+    </script>
+</body>
+
+</html>
